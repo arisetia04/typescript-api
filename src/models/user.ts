@@ -2,12 +2,10 @@ import {
     Table,
     Column,
     Model,
-    PrimaryKey,
-    HasMany
+    PrimaryKey
 } from "sequelize-typescript";
 import { DataTypes } from "sequelize";
 import { Optional } from "sequelize";
-
 export interface UserAttributes {
     id?: string;
     name: string;

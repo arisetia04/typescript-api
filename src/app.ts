@@ -1,8 +1,7 @@
 import express from "express";
 import "express-async-errors";
-import { json } from "body-parser";
 import cors from "cors";
-import path from "path";
+import { json } from "body-parser";
 import { sequelize } from "./config/sequelize";
 import { appRouter } from "./api/route";
 import { PORT } from "./config/constants";
@@ -14,15 +13,13 @@ const app = express();
 
 app.use("/public", express.static("public"));
 
-
-app.set("view engine", "html");
-
 app.use(
     cors({
         origin: "*",
         credentials: false
     })
 );
+
 app.use(json());
 
 app.get("/", (req, res) => {
@@ -32,6 +29,7 @@ app.get("/", (req, res) => {
         running: PORT
     });
 });
+
 app.use("/api", appRouter);
 
 app.all("*", async (req, res) => {
