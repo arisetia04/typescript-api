@@ -29,7 +29,7 @@ class User extends Model<UserAttributes, UserCreationAttributes> {
     @Column({ type: DataTypes.STRING })
     name!: string;
 
-    @Column({ type: DataTypes.STRING })
+    @Column({ type: DataTypes.STRING, allowNull: false, unique: true })
     email!: string;
 
     @Column({ type: DataTypes.STRING })
