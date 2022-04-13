@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import { JWT_SECRET } from "../config/constants";
 
 export interface IJWT_PAYLOAD {
-    id: string;
+    id: 123;
     email: string;
 }
 

@@ -5,6 +5,7 @@ import { json } from "body-parser";
 import { sequelize } from "./config/sequelize";
 import { appRouter } from "./api/route";
 import { PORT } from "./config/constants";
+import { globalLogger } from "./middlewares/global-logger";
 import { errorHandler } from "./middlewares/error-handler";
 
 const packageVersion = require("../package.json");
@@ -12,6 +13,8 @@ const packageVersion = require("../package.json");
 const app = express();
 
 app.use("/public", express.static("public"));
+
+app.use(globalLogger);
 
 app.use(
     cors({

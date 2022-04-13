@@ -6,6 +6,7 @@ declare global {
         interface Request {
             token: { id: string; email: string };
             currentUser: UserAttributes;
+            logger: any;
         }
     }
 }
